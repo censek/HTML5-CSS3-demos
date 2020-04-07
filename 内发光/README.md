@@ -4,4 +4,4 @@
 再加点动画和滤镜效果，“猩红之月”闪亮登场！
 
 效果图：<br><br>
-<img src="crimsonCrescentLoading.gif" width="500px">
+<img src="crimsonCrescentLoading.gif" width="350px">
