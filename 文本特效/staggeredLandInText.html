@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文本特效1</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+  /* Lora字体效果 */
+
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(pics/bg.jpeg);
+    background-size: cover;
+  }
+
+  p {
+    margin: 0 9em;
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .landIn {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.8;
+    color: white;
+    font-family: Lora, serif;
+    white-space: pre;
+  }
+
+  .landIn span {
+    animation: landIn 0.8s ease-out both;
+  }
+
+  @keyframes landIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<body>
+  <p class="landIn">Not having the best situation, but seeing the best in your situation is the key to happiness.</p>
+</body>
+
+</html>
+
+<script>
+  let landInTexts = document.querySelectorAll(".landIn");
+  landInTexts.forEach(landInText => {
+    let letters = landInText.textContent.split("");
+    landInText.textContent = "";
+    letters.forEach((letter, i) => {
+      let span = document.createElement("span");
+      span.textContent = letter;
+      span.style.animationDelay = `${i * 0.05}s`;
+      landInText.append(span);
+    });
+  });
+</script>
