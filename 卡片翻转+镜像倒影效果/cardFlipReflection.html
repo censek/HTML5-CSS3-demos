@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>卡片翻转+投影效果</title>
+</head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+  }
+
+  .scene {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    perspective: 800px;
+  }
+
+  .scene .card {
+    position: relative;
+    width: 240px;
+    height: 300px;
+    color: white;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  .scene .card:hover {
+    transform: rotateY(0.5turn);
+  }
+
+  .scene .card .card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s ease-in-out;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+  }
+
+  .scene .card .card__face img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .scene .card .card__face--back {
+    transform: rotateY(0.5turn);
+  }
+</style>
+
+<body>
+  <div class="scene">
+    <div class="card">
+      <div class="card__face card__face--front">
+        <img src="pics/p1_1.jpeg" />
+      </div>
+      <div class="card__face card__face--back">
+        <img src="pics/p1_2.jpeg" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__face card__face--front">
+        <img src="pics/p2_1.jpeg" />
+      </div>
+      <div class="card__face card__face--back">
+        <img src="pics/p2_2.jpeg" />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__face card__face--front">
+        <img src="pics/p3_1.jpeg" />
+      </div>
+      <div class="card__face card__face--back">
+        <img src="pics/p3_2.jpeg" />
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
